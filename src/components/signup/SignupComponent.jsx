@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./signupComponent.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "../../constant";
 
 export const SignupComponent = () => {
   const [firstName, setFirstName] = useState("");
@@ -29,7 +30,7 @@ export const SignupComponent = () => {
       password: password,
     };
 
-    fetch("http://localhost:4000/user/register", {
+    fetch(`${API_URL}user/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -56,7 +57,7 @@ export const SignupComponent = () => {
 
         <form onSubmit={handleSubmit}>
           <div className="input">
-            <img src="../../../public/user.jpeg" alt="" />
+            <img src="/user.jpeg" alt="" />
             <input
               type="text"
               placeholder="FirstName"
@@ -65,7 +66,7 @@ export const SignupComponent = () => {
             />
           </div>
           <div className="input">
-            <img src="../../../public/user.jpeg" alt="" />
+            <img src="/user.jpeg" alt="" />
             <input
               type="text"
               placeholder="LastName"
@@ -74,7 +75,7 @@ export const SignupComponent = () => {
             />
           </div>
           <div className="input">
-            <img src="../../../public/email.jpeg" alt="" />
+            <img src="/email.jpeg" alt="" />
             <input
               type="email"
               placeholder="Email id"
@@ -83,7 +84,7 @@ export const SignupComponent = () => {
             />
           </div>
           <div className="input">
-            <img src="../../../public/password.jpeg" alt="" />
+            <img src="/password.jpeg" alt="" />
             <input
               type="password"
               placeholder="NewPassword"
@@ -92,7 +93,7 @@ export const SignupComponent = () => {
             />
           </div>
           <div className="input">
-            <img src="../../../public/password.jpeg" alt="" />
+            <img src="/password.jpeg" alt="" />
             <input
               type="password"
               placeholder="ConfirmPassword"

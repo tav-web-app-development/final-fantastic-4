@@ -11,8 +11,7 @@ This is a React application to browse and discover movies that uses React Router
 Clone the repository and run `npm install` to install the dependencies.
 
 ```bash
-git clone <repository-url>
-cd <repository-name>
+git clone
 npm install
 ```
 
@@ -28,9 +27,10 @@ The base URL for the API is: `http://localhost:4000/`.
 
 ## Scripts For backend Folder
 
-- `npm run dev`: Start the server in development mode with Nodemon.
-- `npm run start`: Start the server in production mode.
+- `cd backend` : The path to the backend folder.
+- `npm i`: Installing backend dependencies.
 - `npm run db:init`: Initialize the database with dummy data.
+- `npm run dev`: Start the server in development mode with Nodemon.
 
 ## Routes
 

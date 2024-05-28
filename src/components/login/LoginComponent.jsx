@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./loginComponent.css";
 import { Link, useNavigate } from "react-router-dom";
+import { API_URL } from "../../constant";
 
 export const LoginComponent = () => {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ export const LoginComponent = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:4000/user/login", {
+    fetch(`${API_URL}user/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -46,7 +47,7 @@ export const LoginComponent = () => {
         </div>
         <div>
           <div className="input">
-            <img src="../../../public/user.jpeg" alt="" />
+            <img src="/user.jpeg" alt="" />
             <input
               type="email"
               name="email"
@@ -58,7 +59,7 @@ export const LoginComponent = () => {
         </div>
         <div>
           <div className="input">
-            <img src="../../../public/password.jpeg" alt="" />
+            <img src="/password.jpeg" alt="" />
             <input
               type="password"
               name="password"

@@ -2,10 +2,14 @@ import React from "react";
 import NavListItem from "../../element/navlistitem/NavListItem";
 import "./Header.css";
 import Search from "../../element/search/Search";
-import Button from "../button/Button";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    navigate("/login");
+  };
   const NavListData = [
     {
       _id: 1,
@@ -45,13 +49,13 @@ export default function Header() {
       </ul>
       <Search />
 
-      <Link
-        to={`/login`}
+      <button
+        onClick={handleLogout}
         className="mainBtn"
         style={{ color: "white", background: "#ff3700" }}
       >
         <ion-icon name="trail-sign-outline"></ion-icon> Log Out
-      </Link>
+      </button>
     </header>
   );
 }
